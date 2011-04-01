@@ -11,7 +11,7 @@ This classifier is based upon the [etc_facts.rb](https://github.com/ripienaar/fa
 Output
      --- 
        parameters: 
-         tomcatMem: 1g
+         tomcatMem: 4g
        classes: 
          - tomcat
          - ntp
