@@ -20,7 +20,8 @@ begin
       key = key.split(',')
       key.each do |val|
        value = val.split(':')
-       parameters[value[0]] = value[1]
+       length = value.length
+       parameters[value[0]] = value[1..length].join(",")
       end
     end
   end
@@ -44,5 +45,4 @@ if parameters.empty?
 else
   yaml_output =  {'classes' => classes.split(','), 'environment' => environment, 'parameters' => parameters }
 end
-
 print yaml_output.to_yaml
