@@ -6,17 +6,20 @@ This classifier is based upon the [etc_facts.rb](https://github.com/ripienaar/fa
 
 /etc/facts.txt:
 
-	parameters=tomcatMem:4g
+	parameters=tomcatMem:6g,permGen:512M,subCollective:qcollective:mcollective
 	classes=ntp,tomcat
 
 Output:
-	     --- 
-	       parameters: 
-	         tomcatMem: 4g
-	       classes: 
-	         - tomcat
-	         - ntp
-	       environment: production
+
+	--- 
+	  parameters: 
+	    permGen: 512M
+	    tomcatMem: 6g
+	    subCollective: "qcollective,mcollective"
+	  classes: 
+	    - tomcat
+	    - ntp::server
+	  environment: production
 
 ## Requirements
 
